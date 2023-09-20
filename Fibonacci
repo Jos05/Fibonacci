@@ -1,0 +1,16 @@
+const arreglo = [1, 2, 4, 6, 10, 15];
+if(arreglo.length != null){
+    console.log("tiene elementos");
+
+}else{
+    console.log("no tiene elementos")
+}
+const {[arreglo.length - 2]: penultimo} = arreglo;
+const {[arreglo.length - 4]: antepenultimo} = arreglo;
+
+console.log(penultimo)
+console.log(antepenultimo)
+
+const ej = penultimo+antepenultimo
+console.log("El resultadode es:" +ej)
+
