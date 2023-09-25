@@ -1,16 +1,19 @@
-const arreglo = [1, 2, 4, 6, 10, 15];
-if(arreglo.length != null){
-    console.log("tiene elementos");
+function fbcciRecu(limite) {
+    if (limite < 3) {
+        return 1;
+    }
 
-}else{
-    console.log("no tiene elementos")
+    return fbcciRecu(limite - 1) + fbcciRecu(limite - 2);
 }
-const {[arreglo.length - 2]: penultimo} = arreglo;
-const {[arreglo.length - 4]: antepenultimo} = arreglo;
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-console.log(penultimo)
-console.log(antepenultimo)
-
-const ej = penultimo+antepenultimo
-console.log("El resultadode es:" +ej)
+rl.question('Ingrese el límite de Fibonacci: ', (limite) => {
+    const resultado = fbcciRecu(parseInt(limite));
+    console.log(`Su ${limite} término de la serie es: ${resultado}`);
+    rl.close();
+})
 
